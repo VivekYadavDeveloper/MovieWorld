@@ -1,0 +1,102 @@
+/* Custom styles for the carousel component */
+
+/* Container styles */
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel {
+  width: 100%;
+}
+
+/* Slider button styles */
+.slider-buttons {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.slider-btn {
+  /* Add your btn and btn-xs styles here or keep using your UI library classes */
+}
+
+.slider-btn.active {
+  /* Add your btn-active styles here or keep using your UI library classes */
+}
+
+/* Progress bar container */
+.progress-container {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+.progress-svg {
+  width: 5rem;
+  height: 5rem;
+}
+
+/* Progress circle styles */
+.progress-bg-circle {
+  color: #5a5a5a;
+  stroke-width: 4;
+  stroke: currentColor;
+  fill: transparent;
+}
+
+.progress-circle {
+  color: white;
+  stroke-width: 4;
+  stroke-dasharray: 113;
+  stroke-linecap: round;
+  stroke: currentColor;
+  fill: transparent;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-text {
+  font-size: 0.875rem;
+  font-weight: bold;
+  fill: white;
+  text-anchor: middle;
+}
+
+
+
+
+/* Slide in from right */
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Slide out to left */
+@keyframes slideOut {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}

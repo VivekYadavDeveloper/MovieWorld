@@ -4,13 +4,19 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'img.daisyui.com',
-        port: '',
-        pathname: '/**',
-      }
-    ]
-  }
+        protocol: "https",
+        hostname: "img.daisyui.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "image.tmdb.org",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
