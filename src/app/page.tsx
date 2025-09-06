@@ -1,5 +1,6 @@
 "use client";
 import Banner from "@/components/Bannersection/Banner/Banner";
+import SliderContainer from "@/components/Slider/SliderContainer/SliderContainer";
 import MainContext from "@/context/MasterContext";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="w-full items-center sm:items-start">
         <MainContext>
           <Banner />
+          <SliderContainer />
         </MainContext>
       </main>
     </div>

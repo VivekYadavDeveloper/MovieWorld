@@ -23,7 +23,7 @@ const BannerSingle: React.FC<BannerSingleProps> = ({
     <>
       <div
         id={`item${itemIndex}`}
-        className={`carousel-item relative w-full ${
+        className={`carousel-item relative w-full  ${
           currentItem === itemIndex ? "block" : "hidden"
         }`}
       >
