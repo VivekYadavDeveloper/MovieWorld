@@ -3,13 +3,14 @@ import { Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const TvShowCard = ({ media }: { media: TVShow }) => {
   const imageUrl = media.poster_path
     ? `https://image.tmdb.org/t/p/w500${media.poster_path}`
     : "noImage";
   return (
     <Link
-      href={`/tv_shows/${media.id}`}
+      href={`/tv_show/${media.id}`}
       className="tv-card relative mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-[0_4px_8px_0_rgba(0,0,0,0.3)] hover:shadow-[3px_4px_8px_2px_rgba(0,0,0,0.5)] hover:transition-all cursor-pointer sm:hover:scale-[1.04] transition-transform duration-200 ease-in-out"
     >
       <div>

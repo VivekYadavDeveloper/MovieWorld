@@ -3,11 +3,15 @@
 import Castings from "@/components/Casting/Casting";
 import MediaDetails from "@/components/MediaDetails/MediaDetails";
 import SceneGallery from "@/components/SceneGallery/SceneGallery";
+import SceneModal from "@/components/SceneModal/SceneModal";
+import SimilarMovieGroup from "@/components/SimilarMovieGroup/SimilarMovieGroup";
 import Trailers from "@/components/Trailers/Trailers";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = "b63e955afbf443c9323b45b9c81c3d68";
+
 const DetailedMoviePage = () => {
   const [movie, setMovie] = useState<any>(null);
   const [youtubeData, setYoutubeData] = useState<any>(null);
@@ -27,6 +31,7 @@ const DetailedMoviePage = () => {
     movie && movie.backdrop_path
       ? `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`
       : "noBanner";
+  /* Fetch Movie Details */
 
   useEffect(() => {
     const fetchMovieData = async () => {
@@ -47,6 +52,8 @@ const DetailedMoviePage = () => {
     fetchMovieData();
   }, [numericMovieId]);
 
+  /* Fetch Video */
+
   useEffect(() => {
     const fetchYoutubeData = async () => {
       try {
@@ -66,6 +73,8 @@ const DetailedMoviePage = () => {
     fetchYoutubeData();
   }, [numericMovieId]);
 
+  /* Fetch Actors Names */
+
   useEffect(() => {
     const fetchMovieCredits = async () => {
       try {
@@ -84,6 +93,8 @@ const DetailedMoviePage = () => {
     };
     fetchMovieCredits();
   }, [numericMovieId]);
+
+  /* Fetch Movie Images */
 
   useEffect(() => {
     const fetchMovieImages = async () => {
@@ -145,18 +156,18 @@ const DetailedMoviePage = () => {
             mediaType={"movie"}
             sceneImages={sceneImages}
             handleImageClick={handleOpenModal}
-          /> 
-          {/* <SceneModal
+          />
+          <SceneModal
             selectedImage={selectedImage}
             onClose={handleCloseModal}
-          /> */}
-          {/* <SimilarMovieGroup
+          />
+          <SimilarMovieGroup
             mediaType={"movie"}
             movieId={numericMovieId.toString()}
-          /> */}
+          />
         </>
       ) : (
-        <p>Loading.</p>
+        <p>Loading...</p>
       )}
     </div>
   );

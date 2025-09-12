@@ -7,8 +7,8 @@ const MovieCard = ({ media }: { media: Movie }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500/${media.poster_path}`;
   return (
     <Link
-      className="card bg-base-300 w-auto shadow-[0_4px_8px_0_rgba(0,0,0,0.3)] hover:shadow-[3px_4px_8px_2px_rgba(0,0,0,0.5)] hover:transition-all duration-300 cursor-pointer sm:hover:scale-[1.04] transition-transform ease-in-out"
       href={`/movies/${media.id}`}
+      className="card bg-base-300 w-auto shadow-[0_4px_8px_0_rgba(0,0,0,0.3)] hover:shadow-[3px_4px_8px_2px_rgba(0,0,0,0.5)] hover:transition-all duration-300 cursor-pointer sm:hover:scale-[1.04] transition-transform ease-in-out"
     >
       <figure>
         <Image width={500} height={200} src={imageUrl} alt={media.title} />
