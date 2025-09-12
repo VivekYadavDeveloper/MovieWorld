@@ -34,7 +34,7 @@ const CardContainer: React.FC<CardGroupProps> = ({
             )
           )}
       </div>
-      <Pagination />
+      <Pagination/>
     </>
   );
 };

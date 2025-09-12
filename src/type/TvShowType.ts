@@ -1,4 +1,4 @@
-export type Movie = {
+export type TVShow = {
     adult: boolean;
     backdrop_path: string;
     genre_ids: number[];
@@ -12,7 +12,6 @@ export type Movie = {
     popularity: number;
     poster_path: string;
     release_date: string;
-    title: string;
     video: boolean;
     vote_average: number;
     vote_count: number;

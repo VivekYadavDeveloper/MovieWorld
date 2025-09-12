@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Tvshow = () => {
+const TvshowDetailPage = () => {
   return (
     <div>Tvshow Dynamic</div>
   )
 }
 
-export default Tvshow
+export default TvshowDetailPage
