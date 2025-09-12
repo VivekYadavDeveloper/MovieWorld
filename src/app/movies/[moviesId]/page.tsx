@@ -35,6 +35,7 @@ const DetailedMoviePage = () => {
           throw new Error("Network response was not ok");
         }
         const data = await res.json();
+        console.log(`Fetch Movie Data:, ${data.response}`);
         setMovie(data);
       } catch (error) {
         console.error("Fetch error:", error);
@@ -47,12 +48,13 @@ const DetailedMoviePage = () => {
     const fetchYoutubeData = async () => {
       try {
         const res = await fetch(
-          `${"https://api.themoviedb.org/3"}/movie/${numericMovieId}/videos?api_key=${"c7cf1258a5aa723e8a98f08f639e86b6"}`
+          `${BASE_URL}/movie/${numericMovieId}/videos?api_key=${API_KEY}`
         );
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await res.json();
+        console.log(`Fetch Youtube Data:, ${data.response}`);
         setYoutubeData(data.results.slice(0, 6));
       } catch (error) {
         console.error("Fetch error:", error);
@@ -65,12 +67,13 @@ const DetailedMoviePage = () => {
     const fetchMovieCredits = async () => {
       try {
         const res = await fetch(
-          `${"https://api.themoviedb.org/3"}/movie/${numericMovieId}/credits?api_key=${"c7cf1258a5aa723e8a98f08f639e86b6"}`
+          `${BASE_URL}/movie/${numericMovieId}/credits?api_key=${API_KEY}`
         );
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await res.json();
+        console.log(`Fetch Movie Credit:, ${data.response}`);
         setCredits(data);
       } catch (error) {
         console.error("Fetch error:", error);
@@ -83,12 +86,13 @@ const DetailedMoviePage = () => {
     const fetchMovieImages = async () => {
       try {
         const res = await fetch(
-          `${"https://api.themoviedb.org/3"}/movie/${numericMovieId}/images?api_key=${"c7cf1258a5aa723e8a98f08f639e86b6"}`
+          `${BASE_URL}/movie/${numericMovieId}/images?api_key=${API_KEY}`
         );
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
         const data = await res.json();
+        console.log(`Fetch Movie Images:, ${data.response}`);
         setSceneImages(data.backdrops.slice(0, 6));
       } catch (error) {
         console.error("Fetch error:", error);
@@ -149,7 +153,7 @@ const DetailedMoviePage = () => {
           /> */}
         </>
       ) : (
-        <p>Loading...single</p>
+        <p>Loading...</p>
       )}
     </div>
   );

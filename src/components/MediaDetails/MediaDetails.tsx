@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// components/TvShowHeader/TvShowHeader.tsx
 
 import Image from "next/image";
 import { Rating, Typography } from "@mui/material";
@@ -103,7 +102,7 @@ const MediaDetails = ({
                     </div>
                   ))
                 ) : (
-                  <p>No featured crew information available</p>
+                  <p>No Featured Crew Information Available</p>
                 )}
               </div>
             </div>
