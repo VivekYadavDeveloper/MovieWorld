@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
+import Castings from "@/components/Casting/Casting";
 import MediaDetails from "@/components/MediaDetails/MediaDetails";
+import SceneGallery from "@/components/SceneGallery/SceneGallery";
+import Trailers from "@/components/Trailers/Trailers";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 const BASE_URL = "https://api.themoviedb.org/3";
@@ -136,13 +139,13 @@ const DetailedMoviePage = () => {
             featuredCrew={credits?.crew}
             handleOpenModal={handleOpenModal}
           />
-          {/* <Trailers youtubeData={youtubeData} />
+          <Trailers youtubeData={youtubeData} />
           <Castings cast={credits?.cast || []} />
           <SceneGallery
             mediaType={"movie"}
             sceneImages={sceneImages}
             handleImageClick={handleOpenModal}
-          /> */}
+          /> 
           {/* <SceneModal
             selectedImage={selectedImage}
             onClose={handleCloseModal}
@@ -153,7 +156,7 @@ const DetailedMoviePage = () => {
           /> */}
         </>
       ) : (
-        <p>Loading...</p>
+        <p>Loading.</p>
       )}
     </div>
   );
