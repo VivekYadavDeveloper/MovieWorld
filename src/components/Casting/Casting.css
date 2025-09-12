@@ -1,0 +1,24 @@
+.cast-card {
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  border-radius: 16px;
+  perspective: 1000px;
+  background-position: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.cast-card img {
+  transition: transform 0.2s ease-in-out;
+  /* border-radius: 1rm; */
+}
+
+.cast-card:hover {
+  transform: rotateX(10deg) rotateY(10deg);
+  /* border-radius: 1rm; */
+}
+
+.cast-card:hover img {
+  transform: scale(1.1);
+  /* border-radius: 1rem; */
+}
