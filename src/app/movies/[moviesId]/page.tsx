@@ -141,7 +141,7 @@ const DetailedMoviePage = () => {
   };
 
   return (
-    <div className="m-10">
+    <div>
       {movie ? (
         <>
           <MediaDetails

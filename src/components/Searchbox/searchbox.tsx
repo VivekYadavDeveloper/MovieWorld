@@ -53,10 +53,10 @@ export const SearchBox = () => {
             <div className="absolute inset-y-0 right-0 flex items-center px-2.5">
               {response && (
                 <button
-                  className="border w-4 h-4 flexjustify-center items-center rounded-full bg-red-400 hover:bg-red-500 active:bg-red-700"
+                  className="border w-5 h-5 flex justify-center items-center rounded-full bg-red-400 hover:bg-red-500 active:bg-red-700"
                   onClick={clearInput}
                 >
-                  x
+                  X
                 </button>
               )}
             </div>

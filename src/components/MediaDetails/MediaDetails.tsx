@@ -27,7 +27,7 @@ const MediaDetails = ({
       : "noBanner";
 
   return (
-    <div className="relative">
+    <div className="relative m-10">
       <Image
         width={1200}
         height={800}
