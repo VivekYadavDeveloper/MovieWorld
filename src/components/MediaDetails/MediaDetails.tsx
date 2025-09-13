@@ -31,12 +31,12 @@ const MediaDetails = ({
       <Image
         width={1200}
         height={800}
-        className="object-top lg:max-h-[75vh] h-[75vh] w-full object-cover"
+        className="object-top lg:max-h-[65vh] max-h-screen w-full object-cover rounded-2xl"
         src={backDropImg}
         alt={movie.title}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-      <div className="absolute bottom-10 left-10 sm:flex lg:gap-16 sm:gap-8 gap-4 ">
+      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl"></div>
+      <div className="absolute bottom-10 left-10 flex lg:gap-16 sm:gap-8 gap-4">
         <div>
           <Image
             className="w-24 lg:w-64"

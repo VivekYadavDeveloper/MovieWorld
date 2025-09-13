@@ -32,6 +32,7 @@ const Banner = () => {
   }, [currentItem]);
 
   return (
+    
     <div className="carousel-container">
       <div className="carousel">
         {movies.map((movie, index) => {
@@ -41,6 +42,7 @@ const Banner = () => {
               key={movie.id}
               currentItem={currentItem}
               itemIndex={index + 1}
+              
             />
           );
         })}

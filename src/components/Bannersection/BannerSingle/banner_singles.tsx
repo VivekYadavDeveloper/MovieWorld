@@ -20,7 +20,7 @@ const BannerSingle: React.FC<BannerSingleProps> = ({
   const imageUrl = `https://image.tmdb.org/t/p/w1280${movie.poster_path}`;
   const backDropImg = `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`;
   return (
-    <>
+    
       <div
         id={`item${itemIndex}`}
         className={`carousel-item relative w-full  ${
@@ -32,12 +32,12 @@ const BannerSingle: React.FC<BannerSingleProps> = ({
           width={500}
           height={500}
           src={backDropImg}
-          className="object-top lg:max-h-[65vh] max-h-screen w-full object-cover"
+          className="object-top lg:max-h-[65vh] max-h-screen w-full object-cover rounded-2xl"
           alt={movie.title}
         />
 
         {/* Bottom black Shade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent rounded-2xl"></div>
 
         {/* Movie Poster Contaiiner */}
         <div className="absolute bottom-10 left-10 flex lg:gap-16 sm:gap-8 gap-4">
@@ -90,7 +90,7 @@ const BannerSingle: React.FC<BannerSingleProps> = ({
           </div>
         </div>
       </div>
-    </>
+    
   );
 };
 

@@ -3,7 +3,6 @@ import { Rating } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
-
 const TvShowCard = ({ media }: { media: TVShow }) => {
   const imageUrl = media.poster_path
     ? `https://image.tmdb.org/t/p/w500${media.poster_path}`
@@ -19,7 +18,7 @@ const TvShowCard = ({ media }: { media: TVShow }) => {
           height={500}
           src={imageUrl}
           className="w-full object-cover"
-          alt={media.name}
+          alt={`${media.name}`}
         />
       </div>
       <div className="absolute inset-0 z-10 hover:bg-gradient-to-t from-black via-transparent to-black">
