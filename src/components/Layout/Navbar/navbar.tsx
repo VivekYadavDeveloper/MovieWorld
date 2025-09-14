@@ -1,8 +1,8 @@
-"use client"
+"use client";
 import SearchBox from "@/components/Searchbox/searchbox";
+import ThemeToggleButton from "@/components/ThemeToggelButtton/ThemeToggelButton";
 import Link from "next/link";
 import { useState } from "react";
-
 
 const NavbarComponent = () => {
   /* Create A State To Handle Response */
@@ -59,6 +59,7 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <Link href={"/tv_show"}>Tv Show</Link>
+                <ThemeToggleButton />
               </li>
             </ul>
           </div>
@@ -81,10 +82,7 @@ const NavbarComponent = () => {
             </li>
           </ul>
         </div>
-
-        <div className="navbar-center rounded-4xl">
-          <a className="btn">Button</a>
-        </div>
+        <ThemeToggleButton />
         <SearchBox />
       </div>
     </>
