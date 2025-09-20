@@ -3,7 +3,6 @@ import Banner from "@/components/Bannersection/Banner/Banner";
 import CardContainer from "@/components/CardGroup/CardContainer/CardContainer";
 import SliderContainer from "@/components/Slider/SliderContainer/SliderContainer";
 import MainContext from "@/context/MasterContext";
-import { CardActions } from "@mui/material";
 
 export default function Home() {
   return (

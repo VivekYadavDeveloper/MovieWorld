@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavbarComponent from "@/components/Layout/Navbar/navbar";
 import Footer from "@/components/Layout/Footer/Footer";
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 /* If Anuthing Common For every Screen Like Eg: Draw,
 AppBar(navbar),Footer,Color,Fonts Always Use Layout Section From App*/
 
@@ -35,6 +35,7 @@ export default function RootLayout({
         <NavbarComponent />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );
