@@ -1,5 +1,5 @@
 "use client";
-import Banner from "@/components/Bannersection/Banner/Banner";
+import Banner from "@/components/BannerSection/Banner/Banner";
 import CardContainer from "@/components/CardGroup/CardContainer/CardContainer";
 import SliderContainer from "@/components/Slider/SliderContainer/SliderContainer";
 import MainContext from "@/context/MasterContext";
