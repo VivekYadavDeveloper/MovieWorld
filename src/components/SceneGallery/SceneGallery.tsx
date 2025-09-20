@@ -1,9 +1,8 @@
+import { ImageDetails } from "@/type/SceneType";
 import Image from "next/image";
-interface Scene {
-  file_path: string;
-}
+
 interface SceneGalleryProps {
-  sceneImages: Scene[];
+  sceneImages: ImageDetails[];
   handleImageClick: (filePath: string) => void;
   mediaType: "movie" | "tv";
 }

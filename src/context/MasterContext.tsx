@@ -3,7 +3,7 @@
 "use client";
 
 import { MasterDataContext } from "@/type/MasterContextType";
-import React, { createContext, ReactNode, useEffect, useState } from "react";
+import React, { createContext, ReactNode, useEffect, useRef, useState } from "react";
 
 const defaultContextValue: MasterDataContext = {
   movies: [],
@@ -45,7 +45,7 @@ const MainContext: React.FC<MasterContextProps> = ({ children }) => {
   const [searchResult, setsearchResult] = useState<any[]>([]);
   const [sliderData, setSliderData] = useState<any[]>([]);
   const [similarMovies, setSimilarMovies] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
 
   /* For Pagination */
@@ -55,13 +55,16 @@ const MainContext: React.FC<MasterContextProps> = ({ children }) => {
   const [trendingOption, setTrendingOption] = useState("top_rated");
   const [detailsType, setDetailsType] = useState<"movie" | "tv">("movie");
   const [movieId, setMovieId] = useState<string>("");
+const prevTrendingOptionsRef = useRef<string>(trendingOption);
+
+
   /* Fetch Data For Front Screen */
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `${BASE_URL}/${movieOrTV}/${trendingOption}?api_key=${API_KEY}`
+          `${BASE_URL}/${movieOrTV}/${trendingOption}?api_key=${API_KEY}&page=${page}`
         );
         if (!response.ok) {
           const errorText = await response.text();
@@ -78,6 +81,13 @@ const MainContext: React.FC<MasterContextProps> = ({ children }) => {
         setLoading(false);
       }
     };
+    /* / Check if trendingOptions has changed, if so, reset page to 1 */
+    if (prevTrendingOptionsRef.current !== trendingOption) {
+      setPage(1);
+    }
+
+    // Update the previous trendingOptions ref
+    prevTrendingOptionsRef.current = trendingOption;
     fetchData();
   }, [movieOrTV, page, trendingOption]);
 

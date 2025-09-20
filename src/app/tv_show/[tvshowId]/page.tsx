@@ -9,20 +9,25 @@ import SceneModal from "@/components/SceneModal/SceneModal";
 import Trailers from "@/components/Trailers/Trailers";
 import MediaDetails from "@/components/MediaDetails/MediaDetails";
 import Castings from "@/components/Casting/Casting";
+import { Credits } from "@/type/CreditsType";
+import { ImageDetails } from "@/type/SceneType";
+import { SingleMovie } from "@/type/SingleMovieType";
+import { VideoData } from "@/type/YoutubeType";
 
 const BASE_URL = "https://api.themoviedb.org/3";
 const API_KEY = "b63e955afbf443c9323b45b9c81c3d68";
 
 const DetailedTvShowPage = () => {
   const { detailsType } = useContext(MasterContext);
-  const [movie, setMovie] = useState<any>(null);
-  const [youtubeData, setYoutubeData] = useState<any>(null);
+ const [movie, setMovie] = useState<SingleMovie | null>(null);
+   const [youtubeData, setYoutubeData] = useState<VideoData[] | null>(null);
+   const [credits, setCredits] = useState<Credits | null>(null); // For movie credits
+   const [sceneImages, setSceneImages] = useState<ImageDetails[]>([]); // For movie scene images
+   const [selectedImage, setSelectedImage] = useState<string | null>(null); // For the selected scene image
+
   const pathname = usePathname();
-  const [credits, setCredits] = useState<any>(null);
   const segments = pathname?.split("/") || [];
   const numericTvShowId = Number(segments[segments.length - 1]);
-  const [sceneImages, setSceneImages] = useState<any>(null);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const imageUrl =
     movie && movie.poster_path
@@ -113,9 +118,9 @@ const DetailedTvShowPage = () => {
     fetchMovieImages();
   }, [numericTvShowId]);
 
-  const genreNames = movie?.genres
-    .map((genre: { name: string }) => genre.name)
-    .join(", ");
+  const genreNames: string = movie?.genres
+    ? movie?.genres.map((genre: { name: string }) => genre.name).join(", ")
+    : '';
 
   const handleOpenModal = (image: string) => {
     setSelectedImage(image);
@@ -140,7 +145,7 @@ const DetailedTvShowPage = () => {
           <MediaDetails
             movie={movie}
             genreNames={genreNames}
-            featuredCrew={credits?.crew}
+            featuredCrew={credits?.crew ?? []}
             handleOpenModal={handleOpenModal}
           />
           <Trailers youtubeData={youtubeData} />

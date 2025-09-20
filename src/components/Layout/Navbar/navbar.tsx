@@ -1,6 +1,6 @@
 "use client";
 import SearchBox from "@/components/Searchbox/searchbox";
-import ThemeToggleButton from "@/components/ThemeToggelButtton/ThemeToggelButton";
+
 import Link from "next/link";
 import { useState } from "react";
 
@@ -59,7 +59,7 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <Link href={"/tv_show"}>Tv Show</Link>
-                <ThemeToggleButton />
+                {/* TODO: <ThemeToggleButton /> */}
               </li>
             </ul>
           </div>
@@ -82,7 +82,7 @@ const NavbarComponent = () => {
             </li>
           </ul>
         </div>
-        <ThemeToggleButton />
+        {/* TODO: <ThemeToggleButton /> */}
         <SearchBox />
       </div>
     </>
